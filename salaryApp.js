@@ -31,6 +31,7 @@ var getChartItems = function (data) {
 }
 
 var drawChart = function drawChart (data) {
+  console.log(data);
   nv.addGraph(function() {
     var chart = nv.models.discreteBarChart()
         .x(function(d) { return d.name })   
@@ -198,6 +199,8 @@ function toggleErrorMessage(selector, value, msg){
 }
 
 var showRecordCount = function (data) {
+  console.log("data");
+  console.log(uniquifyNames(data));
  var dlg = $("#dialog-record-count");
     
   dlg.removeClass('hide');
@@ -241,8 +244,8 @@ function longLineCode () {
   i hate writing comment. 
   need a coffee break!
 */
-
 var uniquifyNames = function(items){
+  
   var uniqueNames = {};
   
   return items.map(function (item) {
@@ -252,7 +255,7 @@ var uniquifyNames = function(items){
 
     }
     else{
-      uniqueNames[item.name] = "";
+      uniqueNames[item.name] = item.name;
     }
     return item;
   });

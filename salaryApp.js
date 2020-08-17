@@ -255,7 +255,7 @@ var uniquifyNames = function(items){
 
     }
     else{
-      uniqueNames[item.name] = item.name;
+      uniqueNames[item.name] = " ";
     }
     return item;
   });
